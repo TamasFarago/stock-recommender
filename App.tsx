@@ -1,13 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, LogBox } from 'react-native';
+import { RootNavigator } from './src/navigation';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
+  LogBox.ignoreAllLogs();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+    <StatusBar style="light"/>
+    <NavigationContainer>
+      <RootNavigator />
+    </NavigationContainer>
+    </>
   );
 }
 
